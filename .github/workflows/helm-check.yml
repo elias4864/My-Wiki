@@ -1,0 +1,33 @@
+name: Helm Check
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+jobs:
+  helm-check:
+    name: Lint and render Helm chart
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+
+      - name: Show Helm version
+        run: helm version
+
+      - name: Lint Helm chart
+        run: helm lint .
+
+      - name: Render Kubernetes manifests
+        run: helm template wiki .
