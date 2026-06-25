@@ -1,0 +1,17 @@
+{{- if .Values.postgresql.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: wikijs-postgresql
+  labels:
+    app: wikijs-postgresql
+spec:
+  type: {{ .Values.postgresql.service.type }}
+  ports:
+    - name: postgres
+      port: {{ .Values.postgresql.service.port }}
+      targetPort: postgres
+      protocol: TCP
+  selector:
+    app: wikijs-postgresql
+{{- end }}

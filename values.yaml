@@ -171,7 +171,7 @@ postgresql:
   ## postgresqlHost override postgres database host
   ## Default to the service name of the custom PostgreSQL deployment
   ##
-  postgresqlHost: "{{ include \"wiki.postgresql.fullname\" . }}"
+  postgresqlHost: wikijs-postgresql
   ## postgresqlPort port for postgres
   ## Default to 5432
   ##
