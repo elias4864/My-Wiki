@@ -16,3 +16,9 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+PROJECT_RULES.md
+PROJEKT_AUFGABEN.md
+UMSETZUNGSPLAN.md
+PHASE_1_DOKUMENTATION.md
+PHASE_2_3_DOKUMENTATION.md
